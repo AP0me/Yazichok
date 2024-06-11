@@ -1,0 +1,227 @@
+
+header {
+    display: flex;
+    height: 4rem;
+    width: 100%;
+    box-shadow: 4px 0px 24px 0px #00000014;
+    align-items: center;
+    padding: 1rem 0.75rem;
+    .user-details {
+        display: grid;
+        grid-template-columns: 1fr min-content max-content auto;
+        margin-left: 6px;
+        gap: 2%;
+        flex-grow: 1;
+        min-width: 250px;
+        justify-content: flex-end;
+        * {
+            align-self: center;
+            justify-self: end;
+        }
+    }
+
+    > input {
+        max-width: 20rem;
+    }
+}
+
+.dashboard-wrapper {
+    display: grid;
+    grid-template-columns: min-content auto;
+    main {
+        display: grid;
+        grid-template-rows: 4rem calc(100vh - 4rem);
+        flex-grow: 1;
+        height: 100vh;
+        .tools-and-status-table {
+            display: grid;
+            width: 100%;
+            height: 100%;
+            padding: 16px;
+            padding-top: 28px;
+            grid-template-rows: 40px auto;
+            row-gap: 30px;
+            .search-tool{
+                overflow: hidden;
+                height: 0;
+            }
+            .search-tool[open]{
+                height: min-content;
+            }
+            .status-table {
+                display: flex;
+                flex-direction: row;
+                gap: 1%;
+                height: 100%;
+                overflow-y: scroll;
+                color: #17181A;
+                .table-column {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: min-content;
+                    padding: 7px;
+                    gap: 12px;
+                    border-radius: 10px;
+                    .travel-rect {
+                        display: grid;
+                        grid-template-columns: 10px 1fr 10px;
+                        grid-template-rows: 2fr 1fr 2fr;
+                        width: 100%;
+                        aspect-ratio: 180 / 80;
+                        min-height: 60px;
+                        background-color: white;
+                        border-radius: 7px;
+                        border: 1px solid #E1E6EF;
+                        font-size: 1vw;
+                        .travel-rect-id-container{
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            grid-column: 2;
+                            .travel-rect-id{
+                                width:  fit-content;
+                                height: fit-content;
+                                align-self: center;
+                            }
+                        }
+                        .travel-rect-time{
+                            grid-column: 2;
+                            font-size: 0.9vw;
+                            color: #7D7C7C;
+                        }
+                        .travel-rect-icon{
+                            width:  100%;
+                            height: 100%;
+                            grid-column: 2;
+                            div{
+                                display: flex;
+                                width:  100%;
+                                height: 20px;
+                                div{
+                                    width:  20px;
+                                    height: 20px;
+                                    .travel-icons{
+                                        width:  15px;
+                                        height: 15px;
+                                        justify-self: center;
+                                        align-self: center;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .status-name-div {
+                        display: grid;
+                        grid-template-columns: min-content auto;
+                        gap: 10px;
+                        .status-name{
+                            font-size: 1.5vw;
+                        }
+                        .status-number {
+                            display: grid;
+                            justify-self: center;
+                            align-self: center;
+                            border-radius: 50%;
+                            height: 100%;
+                            aspect-ratio: 1 / 1;
+                            font-size: 1.5vw;
+                            div {
+                                height: min-content;
+                                width: min-content;
+                                align-self: center;
+                                justify-self: center;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+                .ordered {
+                    background-color: #fffaee;
+                    .status-name-div > .status-number {
+                        background-color: rgba($color: #FFC436, $alpha: 0.7);
+                    }
+                }
+                .confirmed {
+                    background-color: #f5faff;
+                    .status-name-div > .status-number {
+                        background-color: rgba($color: #3988d1, $alpha: 0.7);
+                    }
+                }
+                .in-execution {
+                    background-color: #eeffee;
+                    .status-name-div > .status-number {
+                        background-color: rgba($color: #6cc06b, $alpha: 0.7);
+                    }
+                }
+                .finished {
+                    background-color: #e9e9e9;
+                    .status-name-div > .status-number {
+                        background-color: rgba($color: #3a4d39, $alpha: 0.5);;
+                    }
+                }
+                .in-testing {
+                    background-color: #fff5eb;
+                    .status-name-div > .status-number {
+                        background-color: rgba($color: #f9b572, $alpha: 0.7);;
+                    }
+                }
+                .in-payment {
+                    background-color: #f8f6ff;
+                    .status-name-div > .status-number {
+                        background-color: rgba($color: #e0cef2, $alpha: 1.0);;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.user-name-display {
+    display: grid;
+    grid-template-columns: max-content auto max-content;
+    max-width: 160px;
+    min-width: 60px;
+    width: 100%;
+    height: 40px;
+    .headerProfileImg {
+        width: min-content;
+        height: min-content;
+        min-width: 40px;
+        min-height: 40px;
+        img {
+            height: 100%;
+        }
+        align-self: center;
+        justify-self: center;
+    }
+    .user-name {
+        display: grid;
+        min-width: 0;
+        width: 100%;
+        min-height: 40px;
+        font-size: smaller;
+        overflow: hidden;
+        align-self: center;
+        justify-self: center;
+        div {
+            width: min-content;
+            height: min-content;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+    .profile-dropdown-container {
+        display: grid;
+        min-width: 20px;
+        min-height: 20px;
+        align-self: center;
+        justify-self: center;
+        .profile-dropdown {
+            background-color: transparent;
+            width: min-content;
+            height: min-content;
+            align-self: center;
+            justify-self: center;
+        }
+    }
+}

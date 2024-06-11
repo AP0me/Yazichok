@@ -1,0 +1,27 @@
+aside {
+    width: 4.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: 4px 0px 24px 0px #00000014;
+    padding: 14px;
+}
+
+.tool-tip-container {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    height: min-content;
+    border-top: 1px solid gray;
+    padding-top: 32px;
+}
+
+.logo-and-tool-tips {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    gap: 32px;
+}

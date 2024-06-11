@@ -1,0 +1,41 @@
+
+
+.gridText{
+  ;
+  width:  fit-content;
+  height: fit-content;
+  align-self: center;
+  justify-self: center;
+}
+
+.appGrid{
+  display: grid;
+  grid-template-columns: 76px auto;
+  grid-template-rows:    64px auto;
+  background-color: #282c34;
+  min-height: 100vh;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+.appSideBar{
+  background-color: aliceblue;
+  box-shadow: 2px 2px 5px gray;
+  display: grid;
+  grid-row: 1 / span 2;
+  grid-column: 1;
+}
+.appHeader{
+  background-color: aliceblue;
+  box-shadow: 2px 2px 5px gray;
+  display: grid;
+  grid-row: 1;
+  grid-column: 2;
+}
+.appDesk{
+  background-color: aliceblue;
+  box-shadow: 2px 2px 5px gray;
+  display: grid;
+  grid-row: 2;
+  grid-column: 2;
+}
